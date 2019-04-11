@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string source ;
+            Console.Write("Give me a String : ");
+            source = Console.ReadLine();
+            int source_counter = 0;
+            if (String.IsNullOrEmpty(source))
+                throw new ArgumentException("Input string cannot not be empty.");
+
+            int len = source.Length;
+            source_counter = len;
+
+            while (true)
+            {
+                String start = source.Substring(source_counter);
+                Console.WriteLine($"Start = {start}");
+                Console.WriteLine($"source_counter = {source_counter}");
+                source_counter-- ;
+
+                if (source_counter == -1)
+                {
+                    break;
+                }
+                
+            }
+            Console.WriteLine($"String = {source}");
+            Console.ReadLine();
+        }
+    }
+}
